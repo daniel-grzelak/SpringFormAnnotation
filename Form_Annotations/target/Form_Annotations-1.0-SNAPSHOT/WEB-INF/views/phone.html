@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Form</title>
+</head>
+<body>
+
+<h1>Smartphone form</h1>
+
+<form th:action="@{/}" th:object="${phone}" method="post" enctype="multipart/form-data">
+    <table>
+        <tbody>
+        <tr>
+            <td>Model</td>
+            <td><input type="text" th:field="*{model}"/></td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Producers</h4>
+                <ul>
+                    <li th:each="p : ${producers}">
+                        <input type="checkbox" th:field="*{producers}" th:value="${p}"/>
+                        <label th:text="${p}"></label>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>Screen Size</td>
+            <td><input type="text" th:field="*{screen}"/></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" th:field="*{price}"/></td>
+        </tr>
+        <tr>
+            <td>
+                <h4>Components</h4>
+                <ul>
+                    <li th:each="c : ${components}">
+                        <input type="checkbox" th:field="*{components}" th:value="${c}"/>
+                        <label th:text="${c}"></label>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Picture File: </label>
+            </td>
+            <td>
+                <input type="file" th:field="*{multipartFile}" />
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="SEND"/></td>
+            <td><input type="reset" value="RESET"/></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+</body>
+</html>

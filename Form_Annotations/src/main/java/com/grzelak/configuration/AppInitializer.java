@@ -20,13 +20,12 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         return new String[]{"/"};
     }
 
-    //MULTIPART SECTION
+
     private static final String LOCATION = "D:\\Kapelusznik\\OneDrive\\Programowanie\\mytemp";
     private static final long MAX_FILE_SIZE = 5000000;
     private static final long MAX_REQUEST_SIZE = 20971520;
     private static final int FILE_SIZE_THRESHOLD = 0;
 
-    //DODATKOWA KONFIGURACJA MULTIPART FILE
     @Override
     protected void customizeRegistration(ServletRegistration.Dynamic registration) {
         registration.setMultipartConfig(getMultipartConfigElement());

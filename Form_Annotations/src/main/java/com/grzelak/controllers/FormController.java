@@ -51,10 +51,9 @@ public class FormController {
     @RequestMapping(value = "/", method = RequestMethod.POST)
     public String formPost(@Valid @ModelAttribute Phone phone1, BindingResult result, Model m, HttpServletRequest request)
     {
-        if (result.hasErrors()) //tak przechwycisz czy sa bledy walidacji czyli wynikajace ze sprawdzania ktore
-        //narzucila adnotacja @Valid
+        if (result.hasErrors())
         {
-            //wypisanie bledow
+
             System.out.println("================BINDING RESULTS=====================");
             List<FieldError> errors = result.getFieldErrors();
             for (FieldError error : errors ) {

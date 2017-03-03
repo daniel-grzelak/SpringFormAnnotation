@@ -21,6 +21,10 @@ public class ScreenValidation implements ConstraintValidator<Screen, Double> {
 
     @Override
     public boolean isValid(Double aDouble, ConstraintValidatorContext constraintValidatorContext) {
+
+        if(aDouble == null) {
+            return false;
+        }
         return min <= aDouble && aDouble <= max;
     }
 }

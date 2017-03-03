@@ -29,6 +29,7 @@ import javax.validation.Valid;
 public class FormController {
 
 
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String formGet(Model m)
     {
@@ -71,6 +72,8 @@ public class FormController {
             List<Producer> producers = new ArrayList<>();
             Collections.addAll(producers, Producer.APPLE, Producer.LG, Producer.MICROSOFT, Producer.MOTOROLA, Producer.SAMSUNG);
             m.addAttribute("producers", producers);
+
+
 
 
             return "phone";

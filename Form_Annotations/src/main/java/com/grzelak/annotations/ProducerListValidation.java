@@ -11,17 +11,14 @@ import java.util.List;
  */
 public class ProducerListValidation implements ConstraintValidator<ProducerList, List<Producer>> {
 
+    private int size;
     @Override
     public void initialize(ProducerList producerList) {
-
+    size = producerList.size();
     }
 
     @Override
     public boolean isValid(List<Producer> producers, ConstraintValidatorContext constraintValidatorContext) {
-        if(producers.size() > 1) {
-            return false;
-        } else {
-            return true;
-        }
+        return producers.size() == size;
     }
 }

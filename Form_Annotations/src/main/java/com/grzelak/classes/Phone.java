@@ -18,9 +18,8 @@ public class Phone {
     @Price
     private Double price;
     private List<Component> components;
-
+    @Multipart
     private MultipartFile multipartFile;
-    //@MultipartFilename
     private String multipartFilename;
 
     public Phone() {

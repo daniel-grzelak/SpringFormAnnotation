@@ -16,6 +16,11 @@ public class PriceValidation implements ConstraintValidator<Price, Double> {
    }
 
    public boolean isValid(Double obj, ConstraintValidatorContext context) {
+      if (obj == null)
+      {
+         return false;
+      }
+
       return min <= obj && obj <= max;
    }
 
